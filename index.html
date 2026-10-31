@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#1256a0">
+<meta name="description" content="XSHOP — Toko semua ada dengan harga yang ga akan bikin kantong boros.">
+<title>XSHOP — Semua Bisa Murah</title>
+<style>
+:root{--blue:#1459a6;--blue2:#0b3973;--red:#e33b32;--ink:#17243a;--muted:#68758a;--bg:#f4f7fb;--line:#e4eaf2;--white:#fff;--shadow:0 12px 34px rgba(16,48,91,.10)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}button{cursor:pointer}
+.wrap{width:min(1160px,calc(100% - 32px));margin:auto}
+.topbar{background:var(--blue2);color:#fff;font-size:12px;padding:8px 0}.topbar .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+header{background:#fff;position:sticky;top:0;z-index:10;box-shadow:0 3px 18px #102b4d0c}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:25px;letter-spacing:-1px;color:var(--blue)}
+.brand img{width:45px;height:45px;object-fit:contain}.brand span{color:var(--red)}
+.navlinks{display:flex;gap:24px;color:#44536a;font-weight:650}.navlinks a:hover{color:var(--blue)}
+.btn{border:0;border-radius:12px;padding:12px 17px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.18s}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 7px 16px #1459a62b}.btn-primary:hover{background:var(--blue2);transform:translateY(-1px)}
+.btn-outline{border:1px solid #cbd8e8;background:#fff;color:var(--blue)}.btn-red{background:var(--red);color:white}
+.hero{padding:24px 0 0}.banner{position:relative;overflow:hidden;border-radius:22px;background:#173d68;min-height:270px;box-shadow:var(--shadow)}
+.banner img{width:100%;height:clamp(250px,37vw,430px);display:block;object-fit:cover;object-position:center 48%}
+.banner:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,26,53,.78),rgba(4,26,53,.28) 58%,transparent)}
+.hero-copy{position:absolute;z-index:1;left:clamp(20px,5vw,58px);top:50%;transform:translateY(-50%);max-width:470px;color:white}
+.eyebrow{display:inline-block;background:#ffffff20;border:1px solid #ffffff55;border-radius:99px;padding:6px 11px;font-size:12px;font-weight:800;letter-spacing:.4px}
+.hero h1{font-size:clamp(30px,5vw,55px);line-height:1.04;margin:14px 0 10px;letter-spacing:-1.7px}.hero h1 em{font-style:normal;color:#ffcfca}
+.hero p{max-width:390px;color:#eaf2ff;margin:0 0 20px}
+.section{padding:54px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:22px}.kicker{font-size:12px;font-weight:900;color:var(--red);letter-spacing:1.3px;text-transform:uppercase}
+h2{font-size:clamp(24px,3vw,34px);letter-spacing:-.8px;line-height:1.15;margin:5px 0}.sub{color:var(--muted);margin:7px 0 0}
+.intro-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center}
+.intro-card,.robot-card,.product-card,.branch-card{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}
+.intro-card{padding:28px}.intro-card h3{font-size:24px;margin:0 0 8px}.intro-card p{color:var(--muted);margin:0}
+.perks{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}.pill{border-radius:99px;background:#edf4fc;color:var(--blue2);font-size:12px;font-weight:800;padding:7px 11px}
+.robot-card{min-height:250px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:linear-gradient(135deg,#edf5ff,#fff)}.robot-card img{height:270px;max-width:100%;object-fit:contain}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.product-card{overflow:hidden}.product-image{height:180px;background:#f0f4f9;display:flex;align-items:center;justify-content:center;color:#93a0b3;font-size:13px}
+.product-image img{width:100%;height:100%;object-fit:cover}.product-body{padding:16px}.product-body h3{margin:0 0 4px;font-size:17px}.price{font-size:18px;font-weight:900;color:var(--blue);margin:7px 0}.stock{font-size:12px;color:var(--muted);margin-bottom:12px}.product-actions{display:flex;gap:8px}.product-actions .btn{flex:1;padding:10px 8px;font-size:13px}
+.empty{padding:30px;text-align:center;color:var(--muted);background:white;border:1px dashed #cbd7e6;border-radius:16px;grid-column:1/-1}
+.branch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.branch-card{padding:20px;display:flex;flex-direction:column}.branch-no{font-size:12px;color:var(--red);font-weight:900}.branch-card h3{margin:5px 0 8px;font-size:19px}.address{color:var(--muted);font-size:13px;min-height:84px}.branch-actions{display:grid;gap:8px;margin-top:auto;padding-top:14px}
+.contact-list{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.contact{background:white;border:1px solid var(--line);padding:16px;border-radius:14px}.contact strong{display:block}.contact small{color:var(--muted)}
+.cta{background:linear-gradient(110deg,var(--blue2),var(--blue));color:white;border-radius:20px;padding:28px;display:flex;align-items:center;justify-content:space-between;gap:20px}.cta h2{margin:0 0 7px}.cta p{margin:0;color:#d9e8fb}
+footer{background:#0c2d55;color:#d8e5f5;padding:30px 0;margin-top:20px}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.foot strong{font-size:21px;color:white}.foot small{color:#b9cce2}
+.modal{position:fixed;inset:0;background:#081a30a8;z-index:30;display:none;align-items:center;justify-content:center;padding:16px}.modal.show{display:flex}.modal-box{background:white;width:min(520px,100%);max-height:90vh;overflow:auto;border-radius:18px;padding:22px;box-shadow:0 25px 80px #00152c55}.modal-head{display:flex;justify-content:space-between;align-items:center;gap:12px}.close{border:0;background:#edf2f8;border-radius:9px;padding:7px 11px;font-weight:900}.field{display:grid;gap:6px;margin:12px 0}.field label{font-size:13px;font-weight:800}.field input,.field textarea,.field select{width:100%;border:1px solid #cdd8e6;border-radius:10px;padding:11px;background:#fff}.admin-fab{position:fixed;bottom:16px;right:16px;z-index:12;border-radius:99px;padding:12px 16px;background:#102f55;color:white;border:2px solid white;box-shadow:var(--shadow);font-weight:800}
+.admin-list{display:grid;gap:9px}.admin-item{display:flex;justify-content:space-between;align-items:center;gap:12px;border:1px solid var(--line);border-radius:11px;padding:10px}.admin-item small{display:block;color:var(--muted)}.hidden{display:none!important}
+.notice{font-size:12px;color:#66758a;background:#f1f5fa;padding:10px;border-radius:10px;margin-top:12px}
+@media(max-width:800px){.navlinks{display:none}.intro-grid{grid-template-columns:1fr}.robot-card{min-height:190px}.robot-card img{height:220px}.products{grid-template-columns:repeat(2,1fr)}.branch-grid{grid-template-columns:1fr}.address{min-height:0}.contact-list{grid-template-columns:1fr}.section{padding:40px 0}.banner img{object-position:center}.hero-copy{max-width:75%}.cta{align-items:flex-start;flex-direction:column}}
+@media(max-width:480px){.wrap{width:min(100% - 22px,1160px)}.nav{height:62px}.brand{font-size:22px}.brand img{width:39px;height:39px}.products{grid-template-columns:1fr 1fr;gap:10px}.product-image{height:130px}.product-body{padding:11px}.product-body h3{font-size:14px}.product-actions{flex-direction:column}.product-actions .btn{width:100%}.hero-copy{max-width:86%;left:18px}.hero p{font-size:13px}.banner{border-radius:15px}.section-head{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap"><span>🛍️ XSHOP — Semua Bisa Murah</span><span>Tiga cabang • Bogor</span></div></div>
+<header><div class="wrap nav">
+  <a class="brand" href="#"><img src="assets/xshop-robot.jpg" alt="Maskot robot XSHOP">X<span>SHOP</span></a>
+  <nav class="navlinks"><a href="#produk">Produk</a><a href="#cabang">Lokasi Toko</a><a href="#tentang">Tentang Kami</a></nav>
+  <a class="btn btn-primary" href="#cabang">Hubungi Toko</a>
+</div></header>
+<main>
+<section class="hero"><div class="wrap"><div class="banner">
+  <img id="heroBanner" src="assets/xshop-banner.jpg" alt="Banner kebersamaan XSHOP">
+  <div class="hero-copy"><span class="eyebrow">TOKO SEMUA ADA</span><h1>Semua Bisa <em>Murah.</em></h1><p>Toko Semua Ada Dengan Harga Yang Ga Akan Bikin Kantong Boros.</p><a class="btn btn-red" href="#produk">Jelajahi Produk <span>→</span></a></div>
+</div></div></section>
+<section class="section" id="tentang"><div class="wrap intro-grid">
+  <div class="intro-card"><div class="kicker">Kenalan dengan XSHOP</div><h3>Belanja kebutuhan jadi lebih mudah.</h3><p>XSHOP hadir untuk membantu kamu menemukan berbagai kebutuhan dalam satu tempat. Mulai dari aksesori, otomotif, fashion, peralatan rumah tangga, furniture, dan masih banyak lagi.</p><div class="perks"><span class="pill">Harga bersahabat</span><span class="pill">Banyak pilihan</span><span class="pill">3 lokasi di Bogor</span></div></div>
+  <div class="robot-card"><img src="assets/xshop-robot.jpg" alt="Robot maskot XSHOP"></div>
+</div></section>
+<section class="section" id="produk"><div class="wrap">
+  <div class="section-head"><div><div class="kicker">Katalog XSHOP</div><h2>Temukan kebutuhanmu</h2><p class="sub">Lihat produk pilihan kami, lalu pesan langsung melalui WhatsApp.</p></div><button class="btn btn-outline" onclick="openSearch()">Cari produk 🔎</button></div>
+  <div class="products" id="productGrid"></div>
+</div></section>
+<section class="section" id="cabang"><div class="wrap">
+  <div class="section-head"><div><div class="kicker">Temukan toko kami</div><h2>Mau belanja di cabang mana?</h2><p class="sub">Pilih lokasi terdekat. Tekan tombol peta untuk membuka Google Maps.</p></div></div>
+  <div class="branch-grid" id="branchGrid"></div>
+</div></section>
+<section class="section"><div class="wrap"><div class="cta"><div><h2>Ada yang ingin ditanyakan?</h2><p>Tim XSHOP siap membantu melalui WhatsApp.</p></div><a class="btn btn-red" href="#cabang">Pilih Cabang & Chat</a></div></div></section>
+</main>
+<footer><div class="wrap foot"><div><strong>XSHOP</strong><br><small>Semua Bisa Murah • Toko Semua Ada</small></div><small>© <span id="year"></span> XSHOP. Dibuat untuk memudahkan pelanggan.</small></div></footer>
+
+<button class="admin-fab" onclick="openAdmin()">⚙ Admin</button>
+
+<div class="modal" id="waModal"><div class="modal-box"><div class="modal-head"><h3>Pesan melalui WhatsApp</h3><button class="close" onclick="closeModal('waModal')">✕</button></div><p id="waProductName"></p><div class="field"><label>Pilih cabang</label><select id="waBranch"></select></div><div id="waContacts" class="admin-list"></div><div class="notice">Pesan akan dibuka di WhatsApp. Pastikan nama produk dan cabang sudah benar.</div></div></div>
+
+<div class="modal" id="searchModal"><div class="modal-box"><div class="modal-head"><h3>Cari produk</h3><button class="close" onclick="closeModal('searchModal')">✕</button></div><div class="field"><input id="searchInput" placeholder="Ketik nama produk..." oninput="renderProducts(this.value)"></div></div></div>
+
+<div class="modal" id="adminModal"><div class="modal-box"><div class="modal-head"><h3>Dashboard XSHOP</h3><button class="close" onclick="closeModal('adminModal')">✕</button></div>
+<div id="adminLogin"><p>Masukkan PIN demo untuk membuka pengelolaan katalog.</p><div class="field"><label>PIN Admin</label><input id="adminPin" type="password" inputmode="numeric" placeholder="PIN demo: 1234"></div><button class="btn btn-primary" onclick="loginAdmin()">Masuk</button></div>
+<div id="adminPanel" class="hidden">
+  <div class="perks"><button class="btn btn-primary" onclick="showAdminTab('products')">Produk</button><button class="btn btn-outline" onclick="showAdminTab('banner')">Banner</button></div>
+  <div id="adminProducts"><h3>Tambah / Ubah Produk</h3>
+    <input type="hidden" id="editId">
+    <div class="field"><label>Nama produk</label><input id="pName" placeholder="Contoh: Botol minum"></div>
+    <div class="field"><label>Harga (angka)</label><input id="pPrice" type="number" placeholder="15000"></div>
+    <div class="field"><label>Stok</label><input id="pStock" placeholder="Tersedia"></div>
+    <div class="field"><label>URL foto produk (opsional)</label><input id="pImage" placeholder="https://..."></div>
+    <button class="btn btn-primary" onclick="saveProduct()">Simpan Produk</button>
+    <div class="notice">Data demo tersimpan di browser/perangkat ini saja. Untuk dipakai bersama seluruh admin dan pelanggan, perlu backend/database.</div>
+    <h3>Daftar produk</h3><div class="admin-list" id="adminProductList"></div>
+  </div>
+  <div id="adminBanner" class="hidden"><h3>Ganti banner utama</h3><div class="field"><label>Pilih gambar banner dari perangkat</label><input id="bannerFile" type="file" accept="image/*"></div><button class="btn btn-primary" onclick="saveBanner()">Terapkan banner</button><p class="notice">Banner baru tersimpan di browser ini. Untuk publikasi, unggah file ke penyimpanan server.</p></div>
+</div></div></div>
+
+<script>
+const branches = [
+ {name:"XSHOP Ciomas",address:"Jl. Raya Ciomas Kreteg.3b, Kp. Parung Jambu, Pagelaran, Kec. Ciomas, Kabupaten Bogor, Jawa Barat 16610",contacts:[["Sephia","+6285137910038"],["Yudi","+6285782643932"],["Rahmat","+62895354585020"]]},
+ {name:"XSHOP Villa Bogor Indah",address:"Jl. Villa Bogor Indah 3 No.3 blok AD3, RT.05/RW.15, Kedunghalang, Kec. Bogor Utara, Kota Bogor, Jawa Barat 16158",contacts:[["Ghofar","+6285777756447"],["Iky","+6289540520857"]]},
+ {name:"XSHOP Cilebut",address:"Jl. Kelurahan Sukaresmi, Jembatan No.1, RT.01/RW.04, Cilebut Barat, Tanah Sareal, Kota Bogor, Jawa Barat 16158",contacts:[["Bolay","+6289518565423"]]}
+];
+const starterProducts = [
+ {id:"demo1",name:"Contoh Produk A",price:10000,stock:"Tersedia",image:""},
+ {id:"demo2",name:"Contoh Produk B",price:15000,stock:"Tersedia",image:""},
+ {id:"demo3",name:"Contoh Produk C",price:20000,stock:"Tersedia",image:""}
+];
+let products = JSON.parse(localStorage.getItem("xshop_products")||"null") || starterProducts;
+let activeProduct = null;
+function money(n){return "Rp"+Number(n||0).toLocaleString("id-ID")}
+function saveData(){localStorage.setItem("xshop_products",JSON.stringify(products))}
+function mapUrl(address){return "https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(address)}
+function renderBranches(){
+ document.getElementById("branchGrid").innerHTML=branches.map((b,i)=>`<article class="branch-card"><span class="branch-no">CABANG 0${i+1}</span><h3>${b.name}</h3><p class="address">${b.address}</p><div class="branch-actions"><a class="btn btn-outline" target="_blank" rel="noopener" href="${mapUrl(b.address)}">📍 Buka Google Maps</a><button class="btn btn-primary" onclick="openBranchWhatsApp(${i})">Chat WhatsApp</button></div></article>`).join("");
+}
+function renderProducts(q=""){
+ const list=products.filter(p=>p.name.toLowerCase().includes((q||"").toLowerCase()));
+ document.getElementById("productGrid").innerHTML=list.length?list.map(p=>`<article class="product-card"><div class="product-image">${p.image?`<img src="${p.image}" alt="${escapeHtml(p.name)}" onerror="this.parentElement.textContent='Foto produk'">`:"Foto produk"}</div><div class="product-body"><h3>${escapeHtml(p.name)}</h3><div class="price">${money(p.price)}</div><div class="stock">Stok: ${escapeHtml(p.stock||"Tanyakan ke admin")}</div><div class="product-actions"><button class="btn btn-primary" onclick="openProductWhatsApp('${p.id}')">Pesan</button></div></div></article>`).join(""):`<div class="empty">Produk belum ditemukan.</div>`;
+}
+function escapeHtml(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function openProductWhatsApp(id){activeProduct=products.find(p=>p.id===id);document.getElementById("waProductName").textContent=activeProduct?activeProduct.name:"";document.getElementById("waBranch").innerHTML=branches.map((b,i)=>`<option value="${i}">${b.name}</option>`).join("");document.getElementById("waBranch").onchange=()=>renderWaContacts(Number(document.getElementById("waBranch").value),true);renderWaContacts(0,true);showModal("waModal")}
+function openBranchWhatsApp(i){activeProduct=null;document.getElementById("waProductName").textContent="Hubungi admin "+branches[i].name;document.getElementById("waBranch").innerHTML=branches.map((b,j)=>`<option value="${j}" ${i===j?"selected":""}>${b.name}</option>`).join("");document.getElementById("waBranch").onchange=()=>renderWaContacts(Number(document.getElementById("waBranch").value),false);renderWaContacts(i,false);showModal("waModal")}
+function renderWaContacts(i,withProduct){document.getElementById("waContacts").innerHTML=branches[i].contacts.map(([name,phone])=>`<a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/${phone.replace("+","")}?text=${encodeURIComponent(withProduct&&activeProduct?`Halo ${name}, saya ingin bertanya/memesan ${activeProduct.name} dengan harga ${money(activeProduct.price)} dari ${branches[i].name}. Apakah masih tersedia?`:`Halo ${name}, saya ingin bertanya tentang ${branches[i].name}.`)}">WhatsApp ${name} ↗</a>`).join("")}
+function showModal(id){document.getElementById(id).classList.add("show")}function closeModal(id){document.getElementById(id).classList.remove("show")}
+function openSearch(){showModal("searchModal");setTimeout(()=>document.getElementById("searchInput").focus(),100)}
+function openAdmin(){document.getElementById("adminLogin").classList.remove("hidden");document.getElementById("adminPanel").classList.add("hidden");showModal("adminModal")}
+function loginAdmin(){if(document.getElementById("adminPin").value==="1234"){document.getElementById("adminLogin").classList.add("hidden");document.getElementById("adminPanel").classList.remove("hidden");renderAdminList()}else alert("PIN salah. PIN demo: 1234")}
+function showAdminTab(tab){document.getElementById("adminProducts").classList.toggle("hidden",tab!=="products");document.getElementById("adminBanner").classList.toggle("hidden",tab!=="banner")}
+function saveProduct(){const name=document.getElementById("pName").value.trim(),price=Number(document.getElementById("pPrice").value),stock=document.getElementById("pStock").value.trim()||"Tanyakan ke admin",image=document.getElementById("pImage").value.trim(),id=document.getElementById("editId").value;if(!name||!price){alert("Isi nama dan harga produk.");return}if(id){products=products.map(p=>p.id===id?{...p,name,price,stock,image}:p)}else products.unshift({id:"p"+Date.now(),name,price,stock,image});saveData();clearForm();renderProducts();renderAdminList()}
+function clearForm(){["editId","pName","pPrice","pStock","pImage"].forEach(id=>document.getElementById(id).value="")}
+function renderAdminList(){document.getElementById("adminProductList").innerHTML=products.map(p=>`<div class="admin-item"><div><strong>${escapeHtml(p.name)}</strong><small>${money(p.price)} • ${escapeHtml(p.stock)}</small></div><div><button class="btn btn-outline" onclick="editProduct('${p.id}')">Edit</button> <button class="btn btn-red" onclick="deleteProduct('${p.id}')">Hapus</button></div></div>`).join("")}
+function editProduct(id){const p=products.find(x=>x.id===id);if(!p)return;document.getElementById("editId").value=p.id;document.getElementById("pName").value=p.name;document.getElementById("pPrice").value=p.price;document.getElementById("pStock").value=p.stock;document.getElementById("pImage").value=p.image||"";document.getElementById("adminProducts").scrollIntoView({behavior:"smooth"})}
+function deleteProduct(id){if(confirm("Hapus produk ini?")){products=products.filter(p=>p.id!==id);saveData();renderProducts();renderAdminList()}}
+function saveBanner(){const file=document.getElementById("bannerFile").files[0];if(!file){alert("Pilih gambar terlebih dahulu.");return}const reader=new FileReader();reader.onload=()=>{document.getElementById("heroBanner").src=reader.result;try{localStorage.setItem("xshop_banner",reader.result);alert("Banner diterapkan di browser ini.")}catch(e){alert("Gambar terlalu besar untuk penyimpanan browser. Gunakan gambar yang lebih kecil.")}};reader.readAsDataURL(file)}
+const savedBanner=localStorage.getItem("xshop_banner");if(savedBanner)document.getElementById("heroBanner").src=savedBanner;
+document.getElementById("year").textContent=new Date().getFullYear();
+renderBranches();renderProducts();
+</script>
+</body></html>
